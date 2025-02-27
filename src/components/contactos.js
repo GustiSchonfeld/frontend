@@ -31,7 +31,7 @@ const Contactos = () => {
       <h2>Agenda de Contactos</h2>
       <input placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
       <input placeholder="Teléfono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
-      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />  
       <button onClick={agregarContacto}>Agregar</button>
 
       <ul>

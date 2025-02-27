@@ -3,6 +3,7 @@ import './App.css';
 import AddContact from './AddContact';
 import axios from 'axios';
 
+
 function App() {
   const [contactos, setContactos] = useState([]);
 
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Agenda de Contactos</h1>
+      <h1 className="text-center">Agenda de Contactos</h1>
       <AddContact />
       
       {/* Botón para obtener la lista de contactos */}

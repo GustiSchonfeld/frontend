@@ -1,3 +1,8 @@
+body {
+  background-color: lightblue !important;
+  color: black; /* Opcional, para mejorar la visibilidad del texto */
+}
+
 .App {
   text-align: center;
 }

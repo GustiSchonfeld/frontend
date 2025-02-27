@@ -41,7 +41,9 @@ function AddContact() {
 
   return (
     <div>
+      <br />
       <h2>Agregar Nuevo Contacto</h2>
+      <br />
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
@@ -53,6 +55,7 @@ function AddContact() {
           />
         </label>
         <br />
+        <br />
         <label>
           Teléfono:
           <input
@@ -61,6 +64,7 @@ function AddContact() {
             onChange={(e) => setTelefono(e.target.value)}
           />
         </label>
+        <br />
         <br />
         <label>
           Email:
@@ -71,6 +75,7 @@ function AddContact() {
           />
         </label>
         <br />
+        <br />  
         <button type="submit">Agregar Contacto</button>
       </form>
     </div>
