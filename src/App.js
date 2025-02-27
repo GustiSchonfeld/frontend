@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import AddContact from './AddContact';
+import axios from 'axios';
 
 function App() {
+  const [contactos, setContactos] = useState([]);
+
+  const fetchContacts = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/contactos');
+      setContactos(response.data);
+    } catch (error) {
+      console.error('Error al obtener los contactos:', error);
+      alert('Hubo un error al obtener los contactos.');
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Agenda de Contactos</h1>
+      <AddContact />
+      
+      {/* Botón para obtener la lista de contactos */}
+      <button onClick={fetchContacts}>Mostrar Agenda de Contactos</button>
+
+      {/* Lista de contactos */}
+      {contactos.length > 0 && (
+        <ul>
+          {contactos.map((contacto) => (
+            <li key={contacto.id}>
+              {contacto.nombre} - {contacto.telefono} - {contacto.email}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
